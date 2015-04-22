@@ -7,12 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%=controller_name%>'>
-    <div class="banner">
+    <div id="banner">
       <%= image_tag("logo.png") %>
       <%= @page_title || "Pragmatic Bookshelf" %>
     </div>
-    <div class="columns">
-      <div class="side">
+    <div id="columns">
+      <div id="side">
         <ul>
           <li><a>Home</a></li>
           <li><a>Questions</a></li>
@@ -20,7 +20,7 @@
           <li><a>Contact</a></li>
         </ul>
       </div>
-      <div class="maim">
+      <div id="main">
         <%= yield %>
       </div>
     </div>
