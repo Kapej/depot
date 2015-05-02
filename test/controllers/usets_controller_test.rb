@@ -18,8 +18,9 @@ class UsetsControllerTest < ActionController::TestCase
 
   test "should create uset" do
     assert_difference('Uset.count') do
-      post :create, uset: { name: @uset.name, password: 'secret', password_confirmation: 'secret' }
+      post :create, uset: { name: 'sam', password: 'secret', password_confirmation: 'secret' }
     end
+    assert_redirected_to usets_path
 
     assert_redirected_to uset_path(assigns(:uset))
   end
@@ -36,7 +37,7 @@ class UsetsControllerTest < ActionController::TestCase
 
   test "should update uset" do
     patch :update, id: @uset, uset: { name: @uset.name, password: 'secret', password_confirmation: 'secret' }
-    assert_redirected_to uset_path(assigns(:uset))
+    assert_redirected_to usets_path
   end
 
   test "should destroy uset" do
