@@ -8,6 +8,9 @@ Depot::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  get "sessions/create"
+  get "sessions/destroy"
+
   resources :usets
 
   resources :orders
@@ -15,7 +18,6 @@ Depot::Application.routes.draw do
   resources :line_items
 
   resources :carts
-
   get "store/index"
   resources :products do
     get :who_bought, on: :member
