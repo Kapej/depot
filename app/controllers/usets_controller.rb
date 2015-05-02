@@ -54,7 +54,12 @@ class UsetsController < ApplicationController
   # DELETE /usets/1
   # DELETE /usets/1.json
   def destroy
-    @uset.destroy
+    begin
+      @uset.destroy
+      flash[:notice] = "User #{@uset.name} deleted"
+    rescue StandardError => e
+      flash[:notice] = e.message
+    end
     respond_to do |format|
       format.html { redirect_to usets_url }
       format.json { head :no_content }
