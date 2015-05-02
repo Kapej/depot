@@ -21,8 +21,6 @@ class UsetsControllerTest < ActionController::TestCase
       post :create, uset: { name: 'sam', password: 'secret', password_confirmation: 'secret' }
     end
     assert_redirected_to usets_path
-
-    assert_redirected_to uset_path(assigns(:uset))
   end
 
   test "should show uset" do

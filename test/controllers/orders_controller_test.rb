@@ -11,12 +11,12 @@ class OrdersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:orders)
   end
 
-  test "should get new" do
+  test "should get new basic" do
     get :new
     assert_response :redirect
   end
 
-  test "should create order" do
+  test "should create order basic" do
     assert_difference('Order.count') do
       post :create, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
     end
