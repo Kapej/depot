@@ -2,14 +2,12 @@ Depot::Application.routes.draw do
 
   get 'admin' => 'admin#index'
 
-  controller :sessions do
+  controller :session do
     get  'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
 
-  get "sessions/create"
-  get "sessions/destroy"
 
   resources :usets
 
