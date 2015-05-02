@@ -4,7 +4,7 @@ class UsetsController < ApplicationController
   # GET /usets
   # GET /usets.json
   def index
-    @usets = Uset.all
+    @usets = Uset.order(:name)
   end
 
   # GET /usets/1
@@ -28,7 +28,7 @@ class UsetsController < ApplicationController
 
     respond_to do |format|
       if @uset.save
-        format.html { redirect_to @uset, notice: 'Uset was successfully created.' }
+        format.html { redirect_to uset_url, notice: 'User #{@uset.name} was successfully created.' }
         format.json { render action: 'show', status: :created, location: @uset }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class UsetsController < ApplicationController
   def update
     respond_to do |format|
       if @uset.update(uset_params)
-        format.html { redirect_to @uset, notice: 'Uset was successfully updated.' }
+        format.html { redirect_to uset_url, notice: 'User #{@uset.name} was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
