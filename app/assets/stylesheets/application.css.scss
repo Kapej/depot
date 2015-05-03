@@ -25,6 +25,7 @@
   img {
     float: left;
   }
+
 }
 
 #notice {
@@ -126,3 +127,12 @@
   }
 }
 //#END:form
+
+/* START:i18n */
+
+.locale {
+  float: right;
+  margin: -0.25em 0.1em;
+  color: red;
+}
+/* END:i18n */
